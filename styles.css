@@ -1,0 +1,379 @@
+:root {
+  --ink: #25221f;
+  --paper: #fbf8f2;
+  --linen: #efe7d8;
+  --thread: #9f5141;
+  --moss: #596a52;
+  --shadow: rgba(23, 19, 15, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, Arial, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(rgba(25, 20, 16, 0.18), rgba(25, 20, 16, 0.46)), url("imagenes/portada_1.jpeg") center / cover;
+}
+
+.topbar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  color: #fffaf1;
+  text-shadow: 0 2px 12px var(--shadow);
+}
+
+.brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(0.7rem, 2vw, 1.6rem);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.nav-links a {
+  padding: 0.45rem 0;
+}
+
+.hero-copy {
+  width: min(92vw, 980px);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  color: #fffaf1;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.55), 0 1px 0 rgba(0, 0, 0, 0.8);
+  background: rgba(43, 31, 22, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(4.2rem, 15vw, 11rem);
+  line-height: 0.86;
+  font-weight: 700;
+}
+
+.hero-copy p {
+  margin: 1rem 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.6rem, 5vw, 3.3rem);
+  font-style: italic;
+}
+
+.section {
+  padding: clamp(4rem, 9vw, 7rem) clamp(1rem, 5vw, 4rem);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+}
+
+.section-heading span {
+  color: var(--thread);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.section-heading h2 {
+  margin: 0.55rem 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.values-section {
+  background: var(--paper);
+}
+
+.values-grid,
+.catalog-grid {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.value-card {
+  min-height: 260px;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid rgba(37, 34, 31, 0.14);
+  border-radius: 8px;
+  background: #fffdf8;
+}
+
+.value-number {
+  color: var(--moss);
+  font-weight: 700;
+}
+
+.value-card h3 {
+  margin: 1.3rem 0 0.75rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.1rem;
+}
+
+.value-card p {
+  margin: 0;
+  color: #5d554e;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.catalog-section {
+  background: var(--linen);
+}
+
+.catalog-card {
+  position: relative;
+  min-height: 560px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  color: #fffaf1;
+  background: #2a241f;
+  cursor: pointer;
+  box-shadow: 0 18px 42px rgba(37, 34, 31, 0.16);
+}
+
+.catalog-card img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.catalog-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 48%, rgba(0, 0, 0, 0.72));
+}
+
+.catalog-card span {
+  position: absolute;
+  z-index: 1;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  text-align: left;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.catalog-card:hover img,
+.catalog-card:focus-visible img {
+  transform: scale(1.04);
+  opacity: 0.92;
+}
+
+.catalog-card:focus-visible,
+.lightbox button:focus-visible,
+.contact-list a:focus-visible {
+  outline: 3px solid var(--thread);
+  outline-offset: 4px;
+}
+
+.contact-section {
+  background: var(--paper);
+}
+
+.contact-content {
+  width: min(880px, 100%);
+  margin: 0 auto;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-list a {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(37, 34, 31, 0.14);
+  border-radius: 8px;
+  background: #fffdf8;
+  color: #423b35;
+  font-weight: 700;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem clamp(0.75rem, 4vw, 3rem);
+  background: rgba(18, 16, 14, 0.92);
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-frame {
+  margin: 0;
+  width: min(86vw, 760px);
+  text-align: center;
+  color: #fffaf1;
+}
+
+.lightbox-frame img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #181512;
+}
+
+.lightbox-frame figcaption {
+  min-height: 1.5rem;
+  margin-top: 0.75rem;
+  font-weight: 700;
+}
+
+.lightbox button {
+  position: absolute;
+  border: 0;
+  color: #fffaf1;
+  background: rgba(255, 250, 241, 0.14);
+  cursor: pointer;
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-control {
+  top: 50%;
+  width: 48px;
+  height: 68px;
+  border-radius: 8px;
+  transform: translateY(-50%);
+  font-size: 3.5rem;
+  line-height: 0.8;
+}
+
+.lightbox-control.previous {
+  left: clamp(0.75rem, 3vw, 2rem);
+}
+
+.lightbox-control.next {
+  right: clamp(0.75rem, 3vw, 2rem);
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .values-grid,
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    min-height: auto;
+  }
+
+  .catalog-card {
+    min-height: 430px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    min-height: 88vh;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.78rem;
+  }
+
+  .hero-copy {
+    padding: 1.25rem;
+  }
+
+  .section {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .catalog-card {
+    min-height: 360px;
+  }
+
+  .lightbox {
+    padding: 4.25rem 0.75rem 5rem;
+  }
+
+  .lightbox-frame {
+    width: 100%;
+  }
+
+  .lightbox-control {
+    top: auto;
+    bottom: 1rem;
+    transform: none;
+  }
+}

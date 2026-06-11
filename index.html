@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sin medida by Patri Aguero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero" id="inicio">
+      <nav class="topbar" aria-label="Navegacion principal">
+        <a href="#inicio" class="brand">Sin medida</a>
+        <div class="nav-links">
+          <a href="#proyecto">Proyecto</a>
+          <a href="#catalogo">Catalogo</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </nav>
+
+      <div class="hero-copy">
+        <h1>Sin medida</h1>
+        <p>by Patri Agüero</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section values-section" id="proyecto" aria-labelledby="proyecto-title">
+        <div class="section-heading">
+          <span>Proyecto</span>
+          <h2 id="proyecto-title">Costura con historia, oficio y calma</h2>
+        </div>
+
+        <div class="values-grid">
+          <article class="value-card">
+            <span class="value-number">01</span>
+            <h3>Artesana</h3>
+            <p>Cada pieza nace despacio, hecha a mano con dedicación y pensada para acompañarte de una forma única, cercana y especial.</p>
+          </article>
+
+          <article class="value-card">
+            <span class="value-number">02</span>
+            <h3>Medio rural</h3>
+            <p>Desde Agüero, una pequeña población con ritmo propio, la costura se convierte en una manera de crear vida, oficio y futuro en el territorio.</p>
+          </article>
+
+          <article class="value-card">
+            <span class="value-number">03</span>
+            <h3>Materiales reciclados</h3>
+            <p>Prendas olvidadas vuelven a tener camino: se transforman en objetos útiles y bonitos, cuidando el entorno y apostando por la economia circular.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section catalog-section" id="catalogo" aria-labelledby="catalogo-title">
+        <div class="section-heading">
+          <span>Catalogo</span>
+          <h2 id="catalogo-title">Piezas para mirar de cerca</h2>
+        </div>
+
+        <div class="catalog-grid">
+          <button class="catalog-card" type="button" data-gallery="bolsos" aria-label="Abrir galeria de bolsos">
+            <img src="imagenes/bolso_1.jpeg" alt="Bolso artesanal de tela">
+            <span>Bolsos</span>
+          </button>
+
+          <button class="catalog-card" type="button" data-gallery="delantales" aria-label="Abrir galeria de delantales">
+            <img src="imagenes/delantal_1.jpeg" alt="Delantal artesanal de tela">
+            <span>Delantales</span>
+          </button>
+
+          <button class="catalog-card" type="button" data-gallery="maquea" aria-label="Abrir galeria de ropa maqueada">
+            <img src="imagenes/maqueada_1.jpeg" alt="Prenda transformada artesanalmente">
+            <span>Maquea tu ropa</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contacto" aria-labelledby="contacto-title">
+        <div class="contact-content">
+          <div class="section-heading">
+            <span>Contacto</span>
+            <h2 id="contacto-title">Encargos, arreglos y piezas especiales</h2>
+          </div>
+
+          <div class="contact-list" aria-label="Formas de contacto">
+            <a href="tel:+34000000000">Telefono: 000 000 000</a>
+            <a href="mailto:hola@sinmedida.es">Email: hola@sinmedida.es</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram: @sinmedida</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galeria de imagenes">
+      <button class="lightbox-close" type="button" aria-label="Cerrar galeria">&times;</button>
+      <button class="lightbox-control previous" type="button" aria-label="Imagen anterior">&#8249;</button>
+      <figure class="lightbox-frame">
+        <img id="lightbox-image" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox-control next" type="button" aria-label="Imagen siguiente">&#8250;</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
